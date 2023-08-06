@@ -14,7 +14,7 @@ var loc;
   display();
   }
   
-  getData('egypt')
+
 
 
 // //////////////////////////////////Fuction display 3days
@@ -147,21 +147,33 @@ document.getElementById('Row').innerHTML=box;
 
 
 ///////////////////////////////////////// get current location
-var liveLocation;
-
-
+var live_Location;
+ async function liveLocation(){
+  
     if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(async function (position) {
-          var lat = position.coords.latitude;
-          var lon = position.coords.longitude;
-          var response=await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
-            response= await response.json() ;
-        liveLocation= response.address.country;
-        console.log(liveLocation)
-         
-      }); 
-    }
-    else console.log('error')
+        try {
+          const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+          });
+          const { latitude, longitude } = position.coords;
+          const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+          const data = await response.json();
+          live_Location = data.address.country;
+          console.log(live_Location);
+        } catch (error) {
+          console.log('Error: ' + error);
+        }
+      } else {
+        console.log('Geolocation is not supported');
+      }
+    
+
+}
+
+(async function(){
+await liveLocation()
+await getData(live_Location)
+})();
 
 
 
