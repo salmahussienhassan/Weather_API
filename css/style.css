@@ -1,0 +1,99 @@
+nav,body{
+    background-color: #1E202B !important;
+}
+nav .nav-content span{
+font-size: 10px;
+color: #bfc1c8;
+}
+.btn-outline-info {
+
+    --bs-btn-color: #009AD8;
+    --bs-btn-border-color: #1E202B;
+    --bs-btn-hover-color: #009AD8 ;
+    --bs-btn-hover-bg: #1E202B ;
+    --bs-btn-hover-border-color: #009AD8;
+    --bs-btn-focus-shadow-rgb: 13,202,240;
+    --bs-btn-active-color: #009AD8;
+    --bs-btn-active-bg: #1E202B;
+    --bs-btn-active-border-color: #009AD8;
+    
+   
+}
+.nav-item:hover a{
+    color: #009AD8 !important;
+}
+.active{
+    color: #009AD8 !important;
+}
+.home{
+    min-height:350px;
+    background-image: url(../img/banner.png);
+    background-position: center;
+    background-size: cover;
+}
+#submit,#Subscribe{
+background-color: #009AD8;
+border-color: #009AD8;
+position: absolute;
+top: 7px;
+right: 10px;
+}
+#search,#email{
+    
+    background-color: #1E202B;
+    border-color: #1E202B;
+}
+#search::placeholder,#email::placeholder{
+    color: #8d8e94;
+}
+footer{
+    background-color: #262936;
+}
+footer p{
+    color: #bfc1c8;
+    font-size: 13px;
+}
+.fa-brands{
+    font-size: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #1E202B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer li:hover .fa-brands{
+    background-color: #009AD8;
+    color: white;
+
+}
+.form-control:focus {
+    
+    box-shadow: none;
+    caret-color: white;
+}
+
+.card-item{
+   
+    background-color: #323544;
+}
+.col-md-4:nth-child(even) .card-item  {
+    background-color: #262936;
+}
+.title{
+    background: rgba(0, 0, 0, 0.1);
+}
+.title h6,.card-body h6{
+    color: #bfc1c8;
+}
+.card-item{
+    background-color: #323544;
+}
+.card-body p{
+    color: #009AD8;
+}
+.cards .row{
+    margin-top: -150px;
+    margin-bottom: 50px;
+}
